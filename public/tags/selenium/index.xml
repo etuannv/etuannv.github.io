@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selenium on Tuan Nguyen - Freelance Developer</title>
+    <link>http://localhost:1313/tags/selenium/</link>
+    <description>Recent content in Selenium on Tuan Nguyen - Freelance Developer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Etsy Ads Reporting Tool</title>
+      <link>http://localhost:1313/projects/etsy-ads-reporting-tool/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/etsy-ads-reporting-tool/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Etsy doesn&amp;rsquo;t let sellers download their advertisement reports directly — making it hard to analyze, optimize, or share ad performance data. This tool solves that problem completely.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-it-does&#34;&gt;What It Does&lt;/h2&gt;&#xA;&lt;p&gt;The tool automatically logs into Etsy, collects both &lt;strong&gt;daily and weekly ad reports&lt;/strong&gt;, converts them to CSV, and uploads to a secure web-based dashboard.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Automated data collection&lt;/strong&gt; — no manual copying&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Daily &amp;amp; weekly reports&lt;/strong&gt; with spend, revenue, views, orders, and conversion ratios&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Advanced filtering&lt;/strong&gt; by date range, department, class, listing ID, revenue/spend range&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;CSV export&lt;/strong&gt; for Excel/Google Sheets analysis&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud-based dashboard&lt;/strong&gt; — accessible from anywhere, no install needed&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;tech-stack&#34;&gt;Tech Stack&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Python + Selenium for automated Etsy login and data extraction&lt;/li&gt;&#xA;&lt;li&gt;Django dashboard for data display and filtering&lt;/li&gt;&#xA;&lt;li&gt;CSV export pipeline&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;&#xA;&lt;p&gt;Etsy credentials are never stored. Scraping runs on a secure server; reports are encrypted and private.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

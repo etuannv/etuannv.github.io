@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Tuan Nguyen - Freelance Developer</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on Tuan Nguyen - Freelance Developer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Etsy Ads Reporting Tool</title>
+      <link>http://localhost:1313/projects/etsy-ads-reporting-tool/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/etsy-ads-reporting-tool/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Etsy doesn&amp;rsquo;t let sellers download their advertisement reports directly — making it hard to analyze, optimize, or share ad performance data. This tool solves that problem completely.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-it-does&#34;&gt;What It Does&lt;/h2&gt;&#xA;&lt;p&gt;The tool automatically logs into Etsy, collects both &lt;strong&gt;daily and weekly ad reports&lt;/strong&gt;, converts them to CSV, and uploads to a secure web-based dashboard.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Automated data collection&lt;/strong&gt; — no manual copying&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Daily &amp;amp; weekly reports&lt;/strong&gt; with spend, revenue, views, orders, and conversion ratios&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Advanced filtering&lt;/strong&gt; by date range, department, class, listing ID, revenue/spend range&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;CSV export&lt;/strong&gt; for Excel/Google Sheets analysis&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cloud-based dashboard&lt;/strong&gt; — accessible from anywhere, no install needed&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;tech-stack&#34;&gt;Tech Stack&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Python + Selenium for automated Etsy login and data extraction&lt;/li&gt;&#xA;&lt;li&gt;Django dashboard for data display and filtering&lt;/li&gt;&#xA;&lt;li&gt;CSV export pipeline&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;security&#34;&gt;Security&lt;/h2&gt;&#xA;&lt;p&gt;Etsy credentials are never stored. Scraping runs on a secure server; reports are encrypted and private.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ShipStation-Integrated Labor Tracking System</title>
+      <link>http://localhost:1313/projects/labor-tracking-system/</link>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/labor-tracking-system/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;A system for warehouses, e-commerce fulfillment centers, and production lines to track worker productivity and time efficiency in real time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Worker time tracking&lt;/strong&gt; — log in/out per task or shipment&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ShipStation integration&lt;/strong&gt; — syncs order and shipment data automatically&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Productivity reports&lt;/strong&gt; — per worker, per shift, per department&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Performance dashboards&lt;/strong&gt; — visual KPIs for managers&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;Live demo: &lt;a href=&#34;https://wh.etuannv.com&#34;&gt;wh.etuannv.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;http://localhost:1313/contact&#34;&gt;Contact me&lt;/a&gt; to build a similar system for your business.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Power Price Tracking System</title>
+      <link>http://localhost:1313/projects/power-price-tracking/</link>
+      <pubDate>Sun, 09 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/power-price-tracking/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This system scrapes power/electricity prices daily, saves to a database, and displays trends on a web dashboard — useful for energy market monitoring.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Daily automated price collection&lt;/li&gt;&#xA;&lt;li&gt;Historical trend charts&lt;/li&gt;&#xA;&lt;li&gt;Simple public-facing dashboard&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;Live demo: &lt;a href=&#34;http://prating.etuannv.com&#34;&gt;prating.etuannv.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;http://localhost:1313/contact&#34;&gt;Contact me&lt;/a&gt; for similar data tracking systems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Price Tracking System</title>
+      <link>http://localhost:1313/projects/price-tracking-system/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/price-tracking-system/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;A system that monitors competitor prices across e-commerce platforms daily, stores the data, and surfaces trends through a live dashboard.&lt;/p&gt;&#xA;&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Daily automated scraping of target product pages&lt;/li&gt;&#xA;&lt;li&gt;Price history database with trend visualization&lt;/li&gt;&#xA;&lt;li&gt;Alert system for significant price changes&lt;/li&gt;&#xA;&lt;li&gt;Clean web dashboard for comparison&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;Live demo: &lt;a href=&#34;http://pricetracking.etuannv.com&#34;&gt;pricetracking.etuannv.com&lt;/a&gt;&lt;br&gt;&#xA;Username: &lt;code&gt;viewer&lt;/code&gt; | Password: &lt;code&gt;etuannv2019demo&lt;/code&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;http://localhost:1313/contact&#34;&gt;Contact me&lt;/a&gt; to build a price tracker for your market.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Database of Licenses System</title>
+      <link>http://localhost:1313/projects/database-of-licenses/</link>
+      <pubDate>Wed, 27 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/database-of-licenses/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;A two-module system that scrapes license data (automotive, contractor) from government sources daily, tracks new licenses, and monitors status changes of existing ones.&lt;/p&gt;&#xA;&lt;h2 id=&#34;modules&#34;&gt;Modules&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;Scraper&lt;/strong&gt; — daily automated collection from public license databases&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dashboard&lt;/strong&gt; — searchable web interface with license status, history, and alerts&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;Live demo: &lt;a href=&#34;http://licensedb.etuannv.com&#34;&gt;licensedb.etuannv.com&lt;/a&gt;&lt;br&gt;&#xA;Username: &lt;code&gt;viewer&lt;/code&gt; | Password: &lt;code&gt;etuannv2019demo&lt;/code&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;http://localhost:1313/contact&#34;&gt;Contact me&lt;/a&gt; to build a license monitoring system.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

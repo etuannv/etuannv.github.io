@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shipstation on Tuan Nguyen - Freelance Developer</title>
+    <link>http://localhost:1313/tags/shipstation/</link>
+    <description>Recent content in Shipstation on Tuan Nguyen - Freelance Developer</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 01 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/shipstation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ShipStation-Integrated Labor Tracking System</title>
+      <link>http://localhost:1313/projects/labor-tracking-system/</link>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/labor-tracking-system/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;A system for warehouses, e-commerce fulfillment centers, and production lines to track worker productivity and time efficiency in real time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-features&#34;&gt;Key Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Worker time tracking&lt;/strong&gt; — log in/out per task or shipment&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ShipStation integration&lt;/strong&gt; — syncs order and shipment data automatically&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Productivity reports&lt;/strong&gt; — per worker, per shift, per department&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Performance dashboards&lt;/strong&gt; — visual KPIs for managers&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;&#xA;&lt;p&gt;Live demo: &lt;a href=&#34;https://wh.etuannv.com&#34;&gt;wh.etuannv.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;👉 &lt;a href=&#34;http://localhost:1313/contact&#34;&gt;Contact me&lt;/a&gt; to build a similar system for your business.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

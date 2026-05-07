@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p>{{ . }}</p>{{ end }}
+</div>
+<div class="card-grid">
+  {{ range .Pages }}
+  <div class="card">
+    <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <p>{{ .Description }}</p>
+    <div class="tags">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

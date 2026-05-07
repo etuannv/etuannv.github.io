@@ -1,0 +1,68 @@
+baseURL: "https://etuannv.com/"
+title: "Tuan Nguyen - Freelance Developer"
+languageCode: "en"
+paginate: 10
+enableRobotsTXT: true
+buildDrafts: false
+
+params:
+  author: "Tuan Nguyen"
+  description: "Freelance Developer | Python | Web Scraping | Automation | 10+ years experience"
+  keywords: ["web scraping", "python", "automation", "freelancer", "django"]
+  env: production
+
+  homeInfoParams:
+    Title: "Hi, I'm Tuan Nguyen 👋"
+    Content: >
+      I'm a freelance developer with **10+ years** of experience in Python scripting,
+      web scraping, and web automation. I've completed projects for clients worldwide
+      on Freelancer.com and Fiverr. Browse my projects below or [contact me](/contact) to discuss yours.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/etuannv"
+    - name: twitter
+      url: "https://twitter.com/etuannv"
+    - name: email
+      url: "etuannv@gmail.com"
+
+  label:
+    text: "etuannv.com"
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+
+  profileMode:
+    enabled: false
+
+  cover:
+    hidden: false
+    hiddenInList: false
+
+menu:
+  main:
+    - identifier: services
+      name: Services
+      url: /services/
+      weight: 10
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 20
+    - identifier: blog
+      name: Blog
+      url: /posts/
+      weight: 30
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 40
+
+taxonomies:
+  category: categories
+  tag: tags
