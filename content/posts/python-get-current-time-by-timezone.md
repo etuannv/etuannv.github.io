@@ -2,7 +2,7 @@
 title: "Python: Get Current Time by Timezone"
 date: 2021-08-10
 tags: ["python", "datetime", "timezone"]
-categories: ["python"]
+categories: ["posts"]
 description: "How to get the current time in a specific timezone using Python's pytz library."
 ---
 

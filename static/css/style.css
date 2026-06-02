@@ -164,8 +164,9 @@ main.container { padding-top: 3rem; padding-bottom: 4rem; }
 .card h3 a:hover { color: var(--accent); text-decoration: none; }
 .card p { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.75rem; }
 
-/* ---- Tags ---- */
-.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+/* ---- Tags & Categories ---- */
+.tags, .categories { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.categories { margin-bottom: 0.4rem; }
 .tag {
   background: var(--bg2);
   border: 1px solid var(--border);
@@ -174,6 +175,29 @@ main.container { padding-top: 3rem; padding-bottom: 4rem; }
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-family: var(--font-mono);
+  transition: border-color 0.15s, color 0.15s;
+}
+.tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+.category {
+  background: var(--surface);
+  border: 1px solid var(--accent2);
+  color: var(--accent2);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, color 0.15s;
+}
+.category:hover {
+  background: var(--accent2);
+  color: #fff;
+  text-decoration: none;
 }
 
 /* ---- Post list ---- */

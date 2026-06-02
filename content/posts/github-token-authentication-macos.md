@@ -2,7 +2,7 @@
 title: "Updating GitHub Authentication Using Token on macOS"
 date: 2021-08-01
 tags: ["github", "macos", "git", "authentication"]
-categories: ["tips"]
+categories: ["posts"]
 description: "Step-by-step guide to replace GitHub password authentication with a personal access token on macOS."
 ---
 
@@ -37,3 +37,8 @@ git push origin main
 macOS will offer to save it to Keychain — say yes to avoid entering it again.
 
 That's it! Your GitHub authentication is now updated to use a personal access token.
+
+---
+
+**See also:**
+- [Updating GitHub Authentication Using Token on macOS (Replacing Password)](/posts/updating-github-authentication-using-token-on-macos-replacing-password/) — updated 2024 guide
