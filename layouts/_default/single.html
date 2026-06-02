@@ -1,21 +1,51 @@
 {{ define "main" }}
-<article class="post">
-  <header class="post-header">
-    <h1>{{ .Title }}</h1>
-    {{ if not .Date.IsZero }}<time>{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
-    {{ with .Params.categories }}
-    <div class="categories">
-      {{ range . }}<a class="category" href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+<div class="post-layout">
+  <article class="post">
+    <header class="post-header">
+      <p class="post-breadcrumb"><a href="/">Home</a> / <a href="/{{ .Section }}/">{{ .Section | title }}</a></p>
+      <h1>{{ .Title }}</h1>
+      <div class="post-meta">
+        {{ if not .Date.IsZero }}<time>{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
+        {{ if .Site.Params.ShowReadingTime }}<span class="reading-time">&middot; {{ .ReadingTime }} min read</span>{{ end }}
+      </div>
+      {{ with .Params.categories }}
+      <div class="categories">
+        {{ range . }}<a class="category" href="/categories/{{ . | urlize }}/">{{ . | title }}</a>{{ end }}
+      </div>
+      {{ end }}
+      {{ with .Params.tags }}
+      <div class="tags">
+        {{ range . }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+      </div>
+      {{ end }}
+    </header>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+    {{ if .Site.Params.ShowPostNavLinks }}
+    <nav class="post-nav">
+      {{ with .PrevInSection }}<a class="post-nav-prev" href="{{ .Permalink }}">← {{ .Title }}</a>{{ end }}
+      {{ with .NextInSection }}<a class="post-nav-next" href="{{ .Permalink }}">{{ .Title }} →</a>{{ end }}
+    </nav>
+    {{ end }}
+  </article>
+
+  <aside class="post-sidebar">
+    {{ if .TableOfContents }}
+    <div class="sidebar-widget toc-widget">
+      <h4 class="sidebar-widget-title">Table of Contents</h4>
+      {{ .TableOfContents }}
     </div>
     {{ end }}
-    {{ with .Params.tags }}
-    <div class="tags">
-      {{ range . }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+    <div class="sidebar-widget hire-widget">
+      <p class="hire-emoji">💼</p>
+      <h4>Need something similar built?</h4>
+      <p>I'm available for freelance projects — web scraping, automation, Python, Django.</p>
+      <a href="/contact/" class="btn btn-primary" style="width:100%;text-align:center;display:block;margin-bottom:0.5rem;">Contact Me</a>
+      <a href="https://www.freelancer.com/u/etuannv" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width:100%;text-align:center;display:block;margin-bottom:0.5rem;">Freelancer.com</a>
+      <a href="https://www.fiverr.com/etuannv" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;text-align:center;display:block;">Fiverr</a>
     </div>
-    {{ end }}
-  </header>
-  <div class="post-content">
-    {{ .Content }}
-  </div>
-</article>
+  </aside>
+</div>
 {{ end }}
+

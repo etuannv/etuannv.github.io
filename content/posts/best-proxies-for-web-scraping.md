@@ -1,6 +1,6 @@
 ---
 title: "Best Proxies for Web Scraping"
-In the next post, we'll explore the differences between various types of proxies: Datacenter, Static Residential, Residential, and Mobile.
+date: 2020-10-04
 tags: ["web-scraping", "proxies", "python", "tips"]
 categories: ["posts"]
 description: "Overview of why proxies are needed for web scraping and an editor recommendation (affiliate)."
@@ -47,4 +47,4 @@ In the next post, we’ll explore the differences between various types of proxi
 
 ---
 **See also:**
-- [Python using Playwright with proxy](/posts/python-using-playwright-with-proxy/) — code example using a proxy in Playwrightate: 2020-10-04
+- [Python using Playwright with proxy](/posts/python-using-playwright-with-proxy/) — code example using a proxy in Playwright

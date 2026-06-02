@@ -1,5 +1,5 @@
 baseURL: "https://etuannv.com/"
-title: "Tuan Nguyen - Freelance Developer"
+title: "etuannv.com"
 languageCode: "en"
 paginate: 10
 enableRobotsTXT: true
@@ -7,7 +7,7 @@ buildDrafts: false
 
 params:
   author: "Tuan Nguyen"
-  description: "Freelance Developer | Python | Web Scraping | Automation | 10+ years experience"
+  description: "Freelance Developer | Python | Web Scraping | Automation | 15+ years experience"
   keywords: ["web scraping", "python", "automation", "freelancer", "django"]
   env: production
 
@@ -22,9 +22,9 @@ params:
     - name: github
       url: "https://github.com/etuannv"
     - name: twitter
-      url: "https://twitter.com/etuannv"
+      url: "https://x.com/etuannv"
     - name: email
-      url: "etuannv@gmail.com"
+      url: "mailto:etuannv@gmail.com"
 
   label:
     text: "etuannv.com"
@@ -66,3 +66,7 @@ menu:
 taxonomies:
   category: categories
   tag: tags
+
+sitemap:
+  changefreq: weekly
+  priority: 0.5
