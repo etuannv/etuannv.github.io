@@ -1,10 +1,15 @@
 {{ define "main" }}
 <section class="hero">
-  <div class="hero-availability">
-    <span class="availability-dot"></span>
-    {{ i18n "available_badge" }}
+  <div class="hero-top">
+    <img src="/images/avatar.png" alt="{{ .Site.Params.author }}" class="hero-avatar" width="96" height="96">
+    <div class="hero-top-text">
+      <div class="hero-availability">
+        <span class="availability-dot"></span>
+        {{ i18n "available_badge" }}
+      </div>
+      <h1>{{ .Site.Params.homeInfoParams.Title }}</h1>
+    </div>
   </div>
-  <h1>{{ .Site.Params.homeInfoParams.Title }}</h1>
   <p class="hero-desc">{{ .Site.Params.homeInfoParams.Content | markdownify }}</p>
   <div class="cta-buttons">
     <a href="{{ relLangURL "services/" }}" class="btn btn-primary">{{ i18n "btn_services" }}</a>

@@ -102,6 +102,24 @@ main.container { padding-top: 3rem; padding-bottom: 4rem; }
   background-clip: text;
 }
 
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.hero-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.hero-top-text { flex: 1; min-width: 0; }
+.hero-top-text h1 { margin-bottom: 0; }
+.hero-top .hero-availability { margin-bottom: 0.6rem; }
+
 .hero-desc {
   font-size: 1.1rem;
   color: var(--text-muted);
