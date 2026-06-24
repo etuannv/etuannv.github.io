@@ -1,0 +1,50 @@
+- id: available_badge
+  translation: "Đang nhận dự án freelance"
+- id: btn_services
+  translation: "Dịch vụ của tôi"
+- id: btn_projects
+  translation: "Xem dự án"
+- id: btn_contact
+  translation: "Liên hệ"
+- id: stat_years_label
+  translation: "Năm kinh nghiệm"
+- id: stat_projects_label
+  translation: "Dự án hoàn thành"
+- id: stat_rating_value
+  translation: "⭐ Đánh giá cao"
+- id: stat_worldwide_value
+  translation: "🌍 Toàn cầu"
+- id: stat_worldwide_label
+  translation: "Khách hàng toàn cầu"
+- id: latest_posts
+  translation: "Bài viết mới nhất"
+- id: all_posts
+  translation: "Xem tất cả bài viết →"
+- id: recent_projects
+  translation: "Dự án gần đây"
+- id: all_projects
+  translation: "Xem tất cả dự án →"
+- id: view_more
+  translation: "Xem →"
+- id: home
+  translation: "Trang chủ"
+- id: min_read
+  translation: "phút đọc"
+- id: table_of_contents
+  translation: "Mục lục"
+- id: hire_title
+  translation: "Bạn cần xây dựng một dự án tương tự?"
+- id: hire_desc
+  translation: "Tôi luôn sẵn sàng nhận các dự án freelance — web scraping, tự động hóa, Python, Django."
+- id: page_not_found_title
+  translation: "404 — Không tìm thấy trang"
+- id: page_not_found_desc
+  translation: "Trang bạn tìm không tồn tại hoặc đã được di chuyển."
+- id: back_home
+  translation: "← Về trang chủ"
+- id: browse_posts
+  translation: "Xem bài viết"
+- id: posts
+  translation: "Bài viết"
+- id: projects
+  translation: "Dự án"

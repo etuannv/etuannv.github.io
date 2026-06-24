@@ -1,0 +1,50 @@
+- id: available_badge
+  translation: "Available for freelance projects"
+- id: btn_services
+  translation: "My Services"
+- id: btn_projects
+  translation: "View Projects"
+- id: btn_contact
+  translation: "Contact Me"
+- id: stat_years_label
+  translation: "Years Experience"
+- id: stat_projects_label
+  translation: "Projects Completed"
+- id: stat_rating_value
+  translation: "⭐ Top Rated"
+- id: stat_worldwide_value
+  translation: "🌍 Worldwide"
+- id: stat_worldwide_label
+  translation: "Clients Served"
+- id: latest_posts
+  translation: "Latest Posts"
+- id: all_posts
+  translation: "All Posts →"
+- id: recent_projects
+  translation: "Recent Projects"
+- id: all_projects
+  translation: "All Projects →"
+- id: view_more
+  translation: "View →"
+- id: home
+  translation: "Home"
+- id: min_read
+  translation: "min read"
+- id: table_of_contents
+  translation: "Table of Contents"
+- id: hire_title
+  translation: "Need something similar built?"
+- id: hire_desc
+  translation: "I'm available for freelance projects — web scraping, automation, Python, Django."
+- id: page_not_found_title
+  translation: "404 — Page Not Found"
+- id: page_not_found_desc
+  translation: "The page you're looking for doesn't exist or has been moved."
+- id: back_home
+  translation: "← Back to Home"
+- id: browse_posts
+  translation: "Browse Posts"
+- id: posts
+  translation: "Posts"
+- id: projects
+  translation: "Projects"

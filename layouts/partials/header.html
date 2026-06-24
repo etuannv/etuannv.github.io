@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar">
-    <a href="/" class="brand">{{ .Site.Title }}</a>
+    <a href="{{ .Site.Home.RelPermalink }}" class="brand">{{ .Site.Title }}</a>
     <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); document.getElementById('nav-links').classList.toggle('open');" aria-expanded="false">
       <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
     </button>
@@ -8,6 +8,11 @@
       {{ range .Site.Menus.main }}
       <li><a href="{{ .URL }}" {{ if eq $.RelPermalink .URL }}class="active"{{ end }}>{{ .Name }}</a></li>
       {{ end }}
+      <li class="lang-switcher">
+        {{ range .AllTranslations.ByLanguage }}
+        <a href="{{ .RelPermalink }}" {{ if eq .Lang $.Lang }}class="active"{{ end }}>{{ .Language.Label }}</a>
+        {{ end }}
+      </li>
     </ul>
   </nav>
 </header>

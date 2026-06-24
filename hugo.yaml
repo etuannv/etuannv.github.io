@@ -1,22 +1,14 @@
 baseURL: "https://etuannv.com/"
-title: "etuannv.com"
-languageCode: "en"
 paginate: 10
 enableRobotsTXT: true
 buildDrafts: false
 
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+
 params:
   author: "Tuan Nguyen"
-  description: "Freelance Developer | Python | Web Scraping | Automation | 15+ years experience"
-  keywords: ["web scraping", "python", "automation", "freelancer", "django"]
   env: production
-
-  homeInfoParams:
-    Title: "Hi, I'm Tuan Nguyen 👋"
-    Content: >
-      I'm a freelance developer with **15+ years** of experience in Python scripting,
-      web scraping, and web automation. I've completed projects for clients worldwide
-      on Freelancer.com and Fiverr. Browse my projects below or [contact me](/contact) to discuss yours.
 
   socialIcons:
     - name: github
@@ -44,25 +36,6 @@ params:
     hidden: false
     hiddenInList: false
 
-menu:
-  main:
-    - identifier: services
-      name: Services
-      url: /services/
-      weight: 10
-    - identifier: projects
-      name: Projects
-      url: /projects/
-      weight: 20
-    - identifier: blog
-      name: Blog
-      url: /posts/
-      weight: 30
-    - identifier: contact
-      name: Contact
-      url: /contact/
-      weight: 40
-
 taxonomies:
   category: categories
   tag: tags
@@ -70,3 +43,72 @@ taxonomies:
 sitemap:
   changefreq: weekly
   priority: 0.5
+
+languages:
+  en:
+    label: "English"
+    locale: "en-us"
+    weight: 1
+    title: "etuannv.com"
+    params:
+      description: "AI Automation, n8n & AI Agents | RAG Chatbots | Python Data Expert — Top Rated Plus on Upwork, 100% Job Success, 10+ years experience."
+      keywords: ["AI automation", "n8n", "AI agent", "RAG chatbot", "LLM integration", "web scraping", "python", "data pipeline", "workflow automation", "LangChain"]
+      homeInfoParams:
+        Title: "Hi, I'm Tuan Nguyen 👋"
+        Content: >
+          I build **AI automation** that actually ships — n8n & Make workflows, AI agents, and RAG chatbots,
+          backed by 10+ years of Python automation and data engineering.
+          Top Rated Plus on Upwork · 100% Job Success · 4,000+ hours delivered.
+          Browse my projects below or [contact me](/contact) to discuss yours.
+    menu:
+      main:
+        - identifier: services
+          name: Services
+          url: /services/
+          weight: 10
+        - identifier: projects
+          name: Projects
+          url: /projects/
+          weight: 20
+        - identifier: blog
+          name: Blog
+          url: /posts/
+          weight: 30
+        - identifier: contact
+          name: Contact
+          url: /contact/
+          weight: 40
+
+  vi:
+    label: "Tiếng Việt"
+    locale: "vi-vn"
+    weight: 2
+    title: "etuannv.com"
+    params:
+      description: "Tự động hóa AI, n8n & AI Agents | RAG Chatbot | Kỹ thuật dữ liệu Python — Top Rated Plus trên Upwork, 100% Job Success, 10+ năm kinh nghiệm."
+      keywords: ["tự động hóa AI", "n8n", "AI agent", "RAG chatbot", "tích hợp LLM", "web scraping", "python", "pipeline dữ liệu", "workflow automation", "LangChain"]
+      homeInfoParams:
+        Title: "Xin chào, tôi là Tuan Nguyen 👋"
+        Content: >
+          Tôi xây dựng **hệ thống tự động hóa AI** thực sự vận hành được — workflow n8n & Make, AI agents và RAG chatbot,
+          trên nền tảng 10+ năm tự động hóa Python và kỹ thuật dữ liệu.
+          Top Rated Plus trên Upwork · 100% Job Success · 4.000+ giờ bàn giao.
+          Xem các dự án của tôi dưới đây hoặc [liên hệ với tôi](/vi/contact) để trao đổi về dự án của bạn.
+    menu:
+      main:
+        - identifier: services
+          name: Dịch vụ
+          url: /vi/services/
+          weight: 10
+        - identifier: projects
+          name: Dự án
+          url: /vi/projects/
+          weight: 20
+        - identifier: blog
+          name: Blog
+          url: /vi/posts/
+          weight: 30
+        - identifier: contact
+          name: Liên hệ
+          url: /vi/contact/
+          weight: 40

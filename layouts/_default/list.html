@@ -11,7 +11,7 @@
     <p>{{ .Description }}</p>
     <div class="card-footer">
       <div class="tags">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
-      <a class="card-link" href="{{ .Permalink }}">View →</a>
+      <a class="card-link" href="{{ .Permalink }}">{{ i18n "view_more" }}</a>
     </div>
   </div>
   {{ end }}

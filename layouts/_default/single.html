@@ -2,20 +2,20 @@
 <div class="post-layout">
   <article class="post">
     <header class="post-header">
-      <p class="post-breadcrumb"><a href="/">Home</a> / <a href="/{{ .Section }}/">{{ .Section | title }}</a></p>
+      <p class="post-breadcrumb"><a href="{{ .Site.Home.RelPermalink }}">{{ i18n "home" }}</a> / <a href="{{ relLangURL .Section }}/">{{ i18n .Section }}</a></p>
       <h1>{{ .Title }}</h1>
       <div class="post-meta">
         {{ if not .Date.IsZero }}<time>{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
-        {{ if .Site.Params.ShowReadingTime }}<span class="reading-time">&middot; {{ .ReadingTime }} min read</span>{{ end }}
+        {{ if .Site.Params.ShowReadingTime }}<span class="reading-time">&middot; {{ .ReadingTime }} {{ i18n "min_read" }}</span>{{ end }}
       </div>
       {{ with .Params.categories }}
       <div class="categories">
-        {{ range . }}<a class="category" href="/categories/{{ . | urlize }}/">{{ . | title }}</a>{{ end }}
+        {{ range . }}<a class="category" href="{{ relLangURL "categories" }}/{{ . | urlize }}/">{{ . | title }}</a>{{ end }}
       </div>
       {{ end }}
       {{ with .Params.tags }}
       <div class="tags">
-        {{ range . }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        {{ range . }}<a class="tag" href="{{ relLangURL "tags" }}/{{ . | urlize }}/">{{ . }}</a>{{ end }}
       </div>
       {{ end }}
     </header>
@@ -33,15 +33,15 @@
   <aside class="post-sidebar">
     {{ if .TableOfContents }}
     <div class="sidebar-widget toc-widget">
-      <h4 class="sidebar-widget-title">Table of Contents</h4>
+      <h4 class="sidebar-widget-title">{{ i18n "table_of_contents" }}</h4>
       {{ .TableOfContents }}
     </div>
     {{ end }}
     <div class="sidebar-widget hire-widget">
       <p class="hire-emoji">💼</p>
-      <h4>Need something similar built?</h4>
-      <p>I'm available for freelance projects — web scraping, automation, Python, Django.</p>
-      <a href="/contact/" class="btn btn-primary" style="width:100%;text-align:center;display:block;margin-bottom:0.5rem;">Contact Me</a>
+      <h4>{{ i18n "hire_title" }}</h4>
+      <p>{{ i18n "hire_desc" }}</p>
+      <a href="{{ relLangURL "contact/" }}" class="btn btn-primary" style="width:100%;text-align:center;display:block;margin-bottom:0.5rem;">{{ i18n "btn_contact" }}</a>
       <a href="https://www.freelancer.com/u/etuannv" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width:100%;text-align:center;display:block;margin-bottom:0.5rem;">Freelancer.com</a>
       <a href="https://www.fiverr.com/etuannv" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width:100%;text-align:center;display:block;">Fiverr</a>
     </div>
