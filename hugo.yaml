@@ -90,10 +90,10 @@ languages:
       homeInfoParams:
         Title: "Xin chào, tôi là Tuan Nguyen 👋"
         Content: >
-          Tôi xây dựng **hệ thống tự động hóa AI** thực sự vận hành được — workflow n8n & Make, AI agents và RAG chatbot,
-          trên nền tảng 10+ năm tự động hóa Python và kỹ thuật dữ liệu.
-          Top Rated Plus trên Upwork · 100% Job Success · 4.000+ giờ bàn giao.
-          Xem các dự án của tôi dưới đây hoặc [liên hệ với tôi](/vi/contact) để trao đổi về dự án của bạn.
+          Tôi xây dựng **hệ thống tự động hóa với sự hỗ trợ của AI** — workflow n8n & Make, AI agents và RAG chatbot, 
+          với nền tảng 10+ năm kinh nghiệm về tự động hóa Python và kỹ thuật dữ liệu.
+          Tôi là 1 freelancer Top Rated Plus trên Upwork · 100% Job Success · 4.000+ giờ làm việc.
+          Xem các dự án của tôi dưới đây hoặc [liên hệ với tôi](/vi/contact) để trao đổi về dự án.
     menu:
       main:
         - identifier: services
