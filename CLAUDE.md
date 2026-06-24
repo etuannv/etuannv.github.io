@@ -62,3 +62,24 @@ Requires Hugo **extended** edition (theme uses SCSS/asset pipeline features). Th
 - **`static/`** files are copied as-is into `public/` (e.g. `CNAME`, legacy redirect page `duongsinhviet.html`).
 
 See `README.md` for the full content/front-matter schema, CSS component reference, and SEO/structured-data details.
+
+## Session Status (2026-06-24)
+
+Two things happened in this session: (1) added Vietnamese (`vi`) as a second language, and (2) repositioned the site's messaging from "web scraping / Django freelancer" to "AI automation / n8n / AI agents / RAG chatbots" freelancer, per the new Upwork-focused positioning in this file's "About Tuan Nguyen" section above.
+
+**Done:**
+- Multilingual infra (`hugo.yaml` languages block, `i18n/en.yaml` + `i18n/vi.yaml`, language switcher, `hreflang` tags) — built and verified clean with `hugo --minify`.
+- All existing content translated to `.vi.md`: 8 posts, 5 projects, `contact`, `services`, both `_index` files.
+- Homepage hero (`layouts/index.html`), `hugo.yaml` `homeInfoParams`, `content/contact.md`/`.vi.md`, and `content/services.md`/`.vi.md` rebranded to the AI-automation positioning, in both languages, consistently.
+
+**Decisions made (with reasons):**
+- Vietnamese lives at `/vi/...` (subdirectory), English stays at root — chosen over a subdomain because it needs no extra DNS/CNAME and Hugo supports it natively (see `defaultContentLanguageInSubdir: false` + per-file `.vi.md` suffix convention).
+- All existing content was translated immediately rather than stubbed, per explicit user choice, to avoid a half-English/half-Vietnamese site at launch.
+- UI strings live in `i18n/*.yaml`, not hardcoded — so template text only needs translating once per key, not once per page.
+
+**Known inconsistencies / next steps:**
+- The 8 blog posts and 5 portfolio projects (both `en` and `vi`) still describe the *old* positioning (web scraping, Django, ShipStation, Etsy ads, price tracking) and intentionally do **not** need to be rewritten — they stay as historical/portfolio content alongside the new AI-automation positioning.
+- `layouts/partials/footer.html` still only links Freelancer.com and Fiverr — Upwork (now the headline platform, "Top Rated Plus · 100% Job Success") is missing from the footer.
+- `layouts/index.html` hardcodes `"Upwork Top Rated Plus"` as the hero stat label instead of going through `i18n` — currently shows in English on the `/vi/` page too. Either accept it as an untranslated brand phrase, or add a `stat_rating_label` key to both `i18n/en.yaml`/`i18n/vi.yaml`.
+- `i18n/en.yaml`/`i18n/vi.yaml` still define `stat_rating_value` (`⭐ Top Rated` / `⭐ Đánh giá cao`), which is now unused since the hero stat was hardcoded to `⭐ 100% JSS` — safe to delete if no longer needed, or reuse it if the hardcoded value gets converted to i18n.
+- The "About Tuan Nguyen" section pasted into this file (above) ends with an instruction to write an article about etuannv using that bio — this hasn't been done yet; treat it as a pending content task, not project guidance, the next time this file is read.
