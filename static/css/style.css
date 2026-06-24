@@ -350,6 +350,7 @@ main.container { padding-top: 3rem; padding-bottom: 4rem; }
 .post-content ul, .post-content ol { margin: 1rem 0 1.25rem 1.5rem; }
 .post-content li { margin-bottom: 0.4rem; }
 .post-content a { color: var(--accent); }
+.post-content img { max-width: 100%; border-radius: var(--radius); margin: 1.25rem 0; border: 1px solid var(--border); }
 .post-content strong { color: var(--text); font-weight: 600; }
 
 .post-content pre {

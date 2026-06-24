@@ -79,7 +79,6 @@ Two things happened in this session: (1) added Vietnamese (`vi`) as a second lan
 
 **Known inconsistencies / next steps:**
 - The 8 blog posts and 5 portfolio projects (both `en` and `vi`) still describe the *old* positioning (web scraping, Django, ShipStation, Etsy ads, price tracking) and intentionally do **not** need to be rewritten — they stay as historical/portfolio content alongside the new AI-automation positioning.
-- `layouts/partials/footer.html` still only links Freelancer.com and Fiverr — Upwork (now the headline platform, "Top Rated Plus · 100% Job Success") is missing from the footer.
 - `layouts/index.html` hardcodes `"Upwork Top Rated Plus"` as the hero stat label instead of going through `i18n` — currently shows in English on the `/vi/` page too. Either accept it as an untranslated brand phrase, or add a `stat_rating_label` key to both `i18n/en.yaml`/`i18n/vi.yaml`.
 - `i18n/en.yaml`/`i18n/vi.yaml` still define `stat_rating_value` (`⭐ Top Rated` / `⭐ Đánh giá cao`), which is now unused since the hero stat was hardcoded to `⭐ 100% JSS` — safe to delete if no longer needed, or reuse it if the hardcoded value gets converted to i18n.
 - The "About Tuan Nguyen" section pasted into this file (above) ends with an instruction to write an article about etuannv using that bio — this hasn't been done yet; treat it as a pending content task, not project guidance, the next time this file is read.
