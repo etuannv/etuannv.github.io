@@ -82,3 +82,23 @@ Two things happened in this session: (1) added Vietnamese (`vi`) as a second lan
 - `layouts/index.html` hardcodes `"Upwork Top Rated Plus"` as the hero stat label instead of going through `i18n` — currently shows in English on the `/vi/` page too. Either accept it as an untranslated brand phrase, or add a `stat_rating_label` key to both `i18n/en.yaml`/`i18n/vi.yaml`.
 - `i18n/en.yaml`/`i18n/vi.yaml` still define `stat_rating_value` (`⭐ Top Rated` / `⭐ Đánh giá cao`), which is now unused since the hero stat was hardcoded to `⭐ 100% JSS` — safe to delete if no longer needed, or reuse it if the hardcoded value gets converted to i18n.
 - The "About Tuan Nguyen" section pasted into this file (above) ends with an instruction to write an article about etuannv using that bio — this hasn't been done yet; treat it as a pending content task, not project guidance, the next time this file is read.
+
+## Session Status (2026-07-08)
+
+User had already drafted a new bilingual post, `content/posts/n8n-ai-lead-capture-airtable/` (`index.md` + `index.vi.md` + `ai-lead-capture-thumb.png`), about an n8n + Claude AI lead-qualification workflow (form → Claude → Airtable → Telegram). This session's task was to verify it against site conventions and fix what didn't match — no new content was drafted.
+
+**Done:**
+- Verified the post against `README.md`'s front-matter schema and against the closest precedent post, `ai-email-triage-n8n-claude/` (same author/topic family, published 2026-06-24).
+- Fixed 3 inconsistencies, in both `index.md` and `index.vi.md`:
+  - `categories: ["projects"]` → `["posts"]` (post lives in `content/posts/`; `"projects"` is reserved for `content/projects/*`).
+  - Broken "See also" cross-link `https://etuannv.com/ai-email-triage` (404) → `https://etuannv.com/posts/ai-email-triage-n8n-claude/` (the real permalink — site has no custom `permalinks:` config in `hugo.yaml`).
+  - Tag `"claude-ai"` → `"claude"`, to match the tag already used by `ai-email-triage-n8n-claude` and `why-i-switched-from-github-copilot-to-claude` instead of fragmenting `/tags/` into two Claude-related pages.
+- Confirmed a clean `hugo --minify` build after the fixes (114 EN pages / 112 VI pages, no errors).
+
+**Decisions made (with reasons):**
+- Did not rewrite any prose/translation — content and translation quality were already solid; only front-matter/link mechanics needed correction.
+- Did not add a reciprocal "See also" link from `ai-email-triage-n8n-claude/` back to the new post — flagged as optional since it touches a previously-published post, left for the user to request explicitly.
+
+**Known inconsistencies / next steps:**
+- The reciprocal cross-link above is still not added — do it if the user asks for tighter linking between the two n8n/Claude posts.
+- The "write an article about etuannv" task from the "About Tuan Nguyen" section (noted in the 2026-06-24 session above) is **still pending** — not addressed this session either.
