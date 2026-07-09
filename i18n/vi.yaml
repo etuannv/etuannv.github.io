@@ -37,7 +37,7 @@
 - id: hire_title
   translation: "Bạn cần xây dựng một dự án tương tự?"
 - id: hire_desc
-  translation: "Tôi luôn sẵn sàng nhận các dự án freelance — web scraping, tự động hóa, Python, Django."
+  translation: "Tôi luôn sẵn sàng nhận các dự án freelance — AI Automation & n8n | AI Agents, RAG | Python Scraping & Browser Bots| Python/Django."
 - id: page_not_found_title
   translation: "404 — Không tìm thấy trang"
 - id: page_not_found_desc

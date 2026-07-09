@@ -52,11 +52,11 @@ languages:
     title: "etuannv.com"
     params:
       description: "AI Automation, n8n & AI Agents | RAG Chatbots | Python Data Expert — Top Rated Plus on Upwork, 100% Job Success, 10+ years experience."
-      keywords: ["AI automation", "n8n", "AI agent", "RAG chatbot", "LLM integration", "web scraping", "python", "data pipeline", "workflow automation", "LangChain"]
+      keywords: ["AI automation", "n8n", "AI agent", "RAG chatbot", "LLM integration", "Python Scraping", "python", "data pipeline", "workflow automation", "Browser Bots"]
       homeInfoParams:
         Title: "Hi, I'm Tuan Nguyen 👋"
         Content: >
-          I build **AI automation** that actually ships — n8n & Make workflows, AI agents, and RAG chatbots,
+          I build **AI automation** that actually ships — AI Automation & n8n | AI Agents, RAG | Python Scraping & Browser Bots| Python/Django,
           backed by 10+ years of Python automation and data engineering.
           Top Rated Plus on Upwork · 100% Job Success · 4,000+ hours delivered.
           Browse my projects below or [contact me](/contact) to discuss yours.
@@ -86,11 +86,11 @@ languages:
     title: "etuannv.com"
     params:
       description: "Tự động hóa AI, n8n & AI Agents | RAG Chatbot | Kỹ thuật dữ liệu Python — Top Rated Plus trên Upwork, 100% Job Success, 10+ năm kinh nghiệm."
-      keywords: ["tự động hóa AI", "n8n", "AI agent", "RAG chatbot", "tích hợp LLM", "web scraping", "python", "pipeline dữ liệu", "workflow automation", "LangChain"]
+      keywords: ["tự động hóa AI", "n8n", "AI agent", "RAG chatbot", "tích hợp LLM", "Python scraping", "python", "pipeline dữ liệu", "workflow automation", "Browser Bots"]
       homeInfoParams:
         Title: "Xin chào, tôi là Tuan Nguyen 👋"
         Content: >
-          Tôi xây dựng **hệ thống tự động hóa với sự hỗ trợ của AI** — workflow n8n & Make, AI agents và RAG chatbot, 
+          Tôi xây dựng **hệ thống tự động hóa với sự hỗ trợ của AI** — AI Automation & n8n | AI Agents, RAG | Python Scraping & Browser Bots| Python/Django, 
           với nền tảng 10+ năm kinh nghiệm về tự động hóa Python và kỹ thuật dữ liệu.
           Tôi là 1 freelancer Top Rated Plus trên Upwork · 100% Job Success · 4.000+ giờ làm việc.
           Xem các dự án của tôi dưới đây hoặc [liên hệ với tôi](/vi/contact) để trao đổi về dự án.

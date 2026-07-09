@@ -26,7 +26,7 @@
   translation: "All Projects →"
 - id: view_more
   translation: "View →"
-- id: home
+- id: homeabout
   translation: "Home"
 - id: min_read
   translation: "min read"
@@ -37,7 +37,7 @@
 - id: hire_title
   translation: "Need something similar built?"
 - id: hire_desc
-  translation: "I'm available for freelance projects — AI Automation, n8n & AI Agents | RAG Chatbots | Web scraping, browser automation, Python/Django."
+  translation: "I'm available for freelance projects — AI Automation & n8n | AI Agents, RAG | Python Scraping & Browser Bots| Python/Django."
 - id: page_not_found_title
   translation: "404 — Page Not Found"
 - id: page_not_found_desc
