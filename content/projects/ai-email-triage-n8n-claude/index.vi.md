@@ -5,7 +5,7 @@ lastmod: 2026-07-09
 tags: ["ai-automation", "n8n", "ai-agents", "rag-chatbots", "claude", "gmail", "workflow-automation"]
 categories: ["projects"]
 description: "Một workflow n8n gồm 6 node, dùng Claude AI để phân loại, ưu tiên, tóm tắt và soạn sẵn câu trả lời cho mọi email — với chi phí dưới $8/tháng. Kèm video demo trực tiếp."
-url: "/vi/posts/ai-email-triage-n8n-claude/"
+aliases: ["/posts/ai-email-triage-n8n-claude/"]
 ---
 
 ![Workflow n8n: Gmail Trigger → Normalize Email → Claude AI → Parse JSON → Google Sheets → Telegram Alert](thumb.png)
@@ -183,6 +183,6 @@ Thời gian thiết lập: khoảng 2 giờ cho người đã quen làm việc v
 
 ---
 **Xem thêm:**
-- [AI Thu Thập Lead — từ form đến CRM trong 30 giây](https://etuannv.com/vi/posts/n8n-ai-lead-capture-airtable/) — cùng mô hình phân loại-và-định-tuyến áp dụng cho lead từ form liên hệ
+- [AI Thu Thập Lead — từ form đến CRM trong 30 giây](https://etuannv.com/vi/projects/n8n-ai-lead-capture-airtable/) — cùng mô hình phân loại-và-định-tuyến áp dụng cho lead từ form liên hệ
 - [Prompt Engineering qua 5 cấp độ](https://etuannv.com/vi/posts/prompt-engineering-5-levels/) — các kỹ thuật prompt đằng sau bước phân loại bằng Claude của workflow này
 - [Dùng Claude Code hiệu quả](https://etuannv.com/vi/posts/claude-code-efficiently/) — cách mình xây và ship những automation như thế này nhanh hơn

@@ -1,18 +1,16 @@
----
-title: "Claude Code, Efficiently: Context, Tokens, and Knowing Which Interface to Use"
-date: 2026-07-09
-tags: ["claude", "claude-code", "ai", "tools", "vscode"]
-categories: ["posts"]
-description: "How to run Claude Code well, not just make it work — managing context as a budget, handing off between sessions with CLAUDE.md, using hooks as guarantees, and picking the right interface (CLI vs VS Code) for the job."
----
+# Claude Code, Efficiently: Context, Tokens, and Knowing Which Interface to Use
 
-![Claude Code, Efficiently](claude-code-efficiently-feature-image.png)
+**Published:** July 8, 2026 · **Author:** Tuan Nguyen · **Tags:** Claude Code, VS Code, AI coding, developer tools, context management
+
+---
 
 Most people learn Claude Code the same way. You install it, run it in a folder, ask it to fix a bug, and it works. Great. Then a month later you're 80% through your context window on a Tuesday night, Claude has forgotten the architecture decision you made an hour ago, and you're burning tokens re-explaining your own project.
 
 The gap between "Claude Code works" and "Claude Code works *well*" isn't about better prompts. It's about three things: how you manage context, how you hand off between sessions, and whether you picked the right interface for the job.
 
 This is what I've learned running it daily on Python and Django projects, written down so I can find it again.
+
+---
 
 ## Part 1 — What Claude Code Actually Is (And Where It Runs)
 
@@ -32,6 +30,8 @@ Two facts that surprise almost everyone:
 **Installing the VS Code extension does not give you the `claude` command in your terminal.** The extension bundles its own copy of the CLI for the chat panel. To run `claude` in VS Code's integrated terminal, you need the standalone CLI installed too.
 
 **The extension and the CLI share conversation history.** Start a conversation in the extension, then run `claude --resume` in your terminal to continue it there. You are never choosing one *instead of* the other. You're choosing which one to use *right now*.
+
+---
 
 ## Part 2 — The First Thing You Should Do: `/init`
 
@@ -76,6 +76,8 @@ Once a project grows, the configuration spreads out:
 ```
 
 The `.local` variants exist so you can commit team config while keeping personal preferences out of the repo.
+
+---
 
 ## Part 3 — The Features That Actually Change How You Work
 
@@ -217,6 +219,8 @@ If your repo has a `.env` with API keys or encryption keys, add a `Read` deny ru
 
 A deny rule blocks the file from reaching Claude at all — including through selected text or open-file notifications.
 
+---
+
 ## Part 4 — Context Management (Where Most Tokens Die)
 
 Context is a budget. Spend it on the problem, not on re-reading things.
@@ -253,6 +257,8 @@ Without that instruction, the summarizer decides what's important. It will usual
 7. **Run `/usage`.** It shows which behaviours are consuming 10% or more of your usage — cache misses, long context, sessions with many subagents or parallel work — with concrete tips for reducing each. It also breaks usage down by skill, subagent, plugin, and MCP server.
 
 That last one is worth doing before you optimize anything. Guessing where your tokens go is a waste of tokens.
+
+---
 
 ## Part 5 — The Session Handoff Loop
 
@@ -291,6 +297,8 @@ Repeat every session, and `CLAUDE.md` becomes the project's long-term memory. Th
 
 **Automate the boring half.** A `SessionStart` hook that prints `git status` and greps for TODOs gives Claude the current state before you type a word. What `SessionStart` and `UserPromptSubmit` write to stdout is added to context as something Claude can see and act on — that's what makes those two events special.
 
+---
+
 ## Part 6 — VS Code Extension: The Seven Things You Use Daily
 
 **1. Can't find the Spark icon?** It only appears in the editor toolbar **when a file is open**. Opening a folder isn't enough. This is the number one confusion. Alternative: click **✱ Claude Code** in the bottom-right status bar — that works with no file open.
@@ -308,6 +316,8 @@ Repeat every session, and `CLAUDE.md` becomes the project's long-term memory. Th
 **7. Dock the panel to the secondary sidebar.** Claude stays visible while you code. Use tabs for parallel conversations — a coloured dot on the spark icon means blue: a permission request is waiting; orange: Claude finished while the tab was hidden.
 
 **Bonus:** session history has a **Remote** tab. Start a task in Claude Code on the web during the day, resume it in VS Code that evening.
+
+---
 
 ## Part 7 — CLI vs Extension: Which, When
 
@@ -344,6 +354,8 @@ They share conversation history. Work in the extension, hit `claude --resume` in
 
 That's the actual answer. The question isn't which tool. It's which one fits the next five minutes.
 
+---
+
 ## The Compressed Version
 
 If you remember six things:
@@ -357,6 +369,8 @@ If you remember six things:
 
 The habit underneath all six: treat context as a budget you're spending, and `CLAUDE.md` as the ledger that survives when the budget runs out.
 
+---
+
 ## References
 
 - [Claude Code documentation](https://code.claude.com/docs/en/overview)
@@ -365,11 +379,6 @@ The habit underneath all six: treat context as a budget you're spending, and `CL
 
 ---
 
-*Tuan Nguyen is a Top Rated Plus automation developer on Upwork with 10+ years in Python and data engineering, building AI automation systems, n8n workflows, and RAG chatbots for clients worldwide.*
+*Tuan Nguyen is a Top Rated Plus automation developer on Upwork with 10+ years in Python and data engineering. He builds AI automation systems, n8n workflows, and RAG chatbots for clients worldwide.*
 
----
-**See also:**
-- [Why I Switched from GitHub Copilot to Claude](https://etuannv.com/posts/why-i-switched-from-github-copilot-to-claude/) — why Claude became my daily coding tool
-- [Prompt Engineering in 5 Levels](https://etuannv.com/posts/prompt-engineering-5-levels/) — the "instructions are a suggestion, code is a guarantee" principle, applied to prompts
-- [AI Email Triage — automatically sort and prioritize your inbox](https://etuannv.com/projects/ai-email-triage-n8n-claude/) — a production n8n + Claude workflow, code on GitHub
-- [AI Lead Capture — from form submission to CRM in 30 seconds](https://etuannv.com/projects/n8n-ai-lead-capture-airtable/) — another production n8n + Claude workflow, code on GitHub
+*→ [Upwork](https://www.upwork.com/freelancers/etuannv) · [Freelancer](https://www.freelancer.com/u/etuannv) · [GitHub](https://github.com/etuannv)*

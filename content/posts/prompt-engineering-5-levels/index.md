@@ -405,6 +405,6 @@ That's the part I build for clients.
 
 ---
 **See also:**
-- [AI Lead Capture — from form submission to CRM in 30 seconds](https://etuannv.com/posts/n8n-ai-lead-capture-airtable/) — the Levels 1–5 workflow this post draws its examples from
-- [AI Email Triage — automatically sort and prioritize your inbox](https://etuannv.com/posts/ai-email-triage-n8n-claude/) — the Levels 1–3 classification workflow
+- [AI Lead Capture — from form submission to CRM in 30 seconds](https://etuannv.com/projects/n8n-ai-lead-capture-airtable/) — the Levels 1–5 workflow this post draws its examples from
+- [AI Email Triage — automatically sort and prioritize your inbox](https://etuannv.com/projects/ai-email-triage-n8n-claude/) — the Levels 1–3 classification workflow
 - [Claude Code, Efficiently](https://etuannv.com/posts/claude-code-efficiently/) — the same "instructions are a suggestion, code is a guarantee" principle, applied to Claude Code

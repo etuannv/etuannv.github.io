@@ -371,5 +371,5 @@ Thói quen nằm dưới cả sáu điều: coi context như một ngân sách b
 **Xem thêm:**
 - [Vì sao mình chuyển từ GitHub Copilot sang Claude](https://etuannv.com/vi/posts/why-i-switched-from-github-copilot-to-claude/) — vì sao Claude thành công cụ code hằng ngày của mình
 - [Prompt Engineering qua 5 cấp độ](https://etuannv.com/vi/posts/prompt-engineering-5-levels/) — nguyên tắc "chỉ dẫn là gợi ý, code là đảm bảo", áp dụng cho prompt
-- [AI Email Triage — tự động phân loại và ưu tiên hộp thư của bạn](https://etuannv.com/vi/posts/ai-email-triage-n8n-claude/) — một workflow n8n + Claude chạy thật, mã nguồn trên GitHub
-- [AI Thu Thập Lead — từ form đến CRM trong 30 giây](https://etuannv.com/vi/posts/n8n-ai-lead-capture-airtable/) — một workflow n8n + Claude chạy thật khác, mã nguồn trên GitHub
+- [AI Email Triage — tự động phân loại và ưu tiên hộp thư của bạn](https://etuannv.com/vi/projects/ai-email-triage-n8n-claude/) — một workflow n8n + Claude chạy thật, mã nguồn trên GitHub
+- [AI Thu Thập Lead — từ form đến CRM trong 30 giây](https://etuannv.com/vi/projects/n8n-ai-lead-capture-airtable/) — một workflow n8n + Claude chạy thật khác, mã nguồn trên GitHub

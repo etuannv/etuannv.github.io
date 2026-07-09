@@ -5,6 +5,7 @@ lastmod: 2026-07-09
 tags: ["n8n", "ai-automation", "automation", "airtable", "claude", "lead-management"]
 categories: ["projects"]
 description: "An n8n + Claude AI workflow that qualifies, scores, logs, and alerts on every contact-form lead automatically — in under 30 seconds."
+aliases: ["/posts/n8n-ai-lead-capture-airtable/"]
 ---
 
 ![n8n workflow: Form Submit → Claude AI → Parse JSON → Airtable → Telegram Alert](ai-lead-capture-thumb.png)
@@ -150,6 +151,6 @@ If your team is spending time manually sorting leads, copying form data, or resp
 
 ---
 **See also:**
-- [AI Email Triage — automatically sort and prioritize your inbox](https://etuannv.com/posts/ai-email-triage-n8n-claude/) — the same qualify-and-route pattern applied to email
+- [AI Email Triage — automatically sort and prioritize your inbox](https://etuannv.com/projects/ai-email-triage-n8n-claude/) — the same qualify-and-route pattern applied to email
 - [Prompt Engineering in 5 Levels](https://etuannv.com/posts/prompt-engineering-5-levels/) — the Levels 1–5 prompt techniques this workflow relies on
 - [Claude Code, Efficiently](https://etuannv.com/posts/claude-code-efficiently/) — how I build and ship automations like this one faster

@@ -5,6 +5,7 @@ lastmod: 2026-07-09
 tags: ["n8n", "ai-automation", "automation", "airtable", "claude", "lead-management"]
 categories: ["projects"]
 description: "Workflow n8n + Claude AI tự động phân loại, chấm điểm, lưu và cảnh báo mọi lead từ form liên hệ — trong chưa đầy 30 giây."
+aliases: ["/posts/n8n-ai-lead-capture-airtable/"]
 ---
 
 ![n8n workflow: Form Submit → Claude AI → Parse JSON → Airtable → Telegram Alert](ai-lead-capture-thumb.png)
@@ -150,6 +151,6 @@ Nếu team bạn đang mất thời gian phân loại lead thủ công, copy d�
 
 ---
 **Xem thêm:**
-- [AI Email Triage — tự động phân loại và ưu tiên hộp thư của bạn](https://etuannv.com/vi/posts/ai-email-triage-n8n-claude/) — cùng mô hình phân loại-và-định-tuyến áp dụng cho email
+- [AI Email Triage — tự động phân loại và ưu tiên hộp thư của bạn](https://etuannv.com/vi/projects/ai-email-triage-n8n-claude/) — cùng mô hình phân loại-và-định-tuyến áp dụng cho email
 - [Prompt Engineering qua 5 cấp độ](https://etuannv.com/vi/posts/prompt-engineering-5-levels/) — các kỹ thuật prompt Cấp 1–5 mà workflow này dựa vào
 - [Dùng Claude Code hiệu quả](https://etuannv.com/vi/posts/claude-code-efficiently/) — cách mình xây và ship những automation như thế này nhanh hơn

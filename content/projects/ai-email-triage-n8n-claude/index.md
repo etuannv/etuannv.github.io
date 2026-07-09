@@ -5,6 +5,7 @@ lastmod: 2026-07-09
 tags: ["ai-automation", "n8n", "ai-agents", "rag-chatbots", "claude", "gmail", "workflow-automation"]
 categories: ["projects"]
 description: "A 6-node n8n workflow that uses Claude AI to classify, prioritize, summarize, and draft replies for every email — for under $8/month. Includes a live demo video."
+aliases: ["/posts/ai-email-triage-n8n-claude/"]
 ---
 
 ![n8n workflow: Gmail Trigger → Normalize Email → Claude AI → Parse JSON → Google Sheets → Telegram Alert](thumb.png)
@@ -182,6 +183,6 @@ Setup time: about 2 hours for someone comfortable with APIs.
 
 ---
 **See also:**
-- [AI Lead Capture — from form submission to CRM in 30 seconds](https://etuannv.com/posts/n8n-ai-lead-capture-airtable/) — the same qualify-and-route pattern applied to contact-form leads
+- [AI Lead Capture — from form submission to CRM in 30 seconds](https://etuannv.com/projects/n8n-ai-lead-capture-airtable/) — the same qualify-and-route pattern applied to contact-form leads
 - [Prompt Engineering in 5 Levels](https://etuannv.com/posts/prompt-engineering-5-levels/) — the prompt techniques behind this workflow's Claude classification
 - [Claude Code, Efficiently](https://etuannv.com/posts/claude-code-efficiently/) — how I build and ship automations like this one faster
