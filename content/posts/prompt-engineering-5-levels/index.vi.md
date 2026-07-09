@@ -407,3 +407,4 @@ Nếu bạn đang gắn một LLM vào một workflow chạm tới dữ liệu t
 **Xem thêm:**
 - [AI Thu Thập Lead — từ form đến CRM trong 30 giây](https://etuannv.com/vi/posts/n8n-ai-lead-capture-airtable/) — workflow Cấp 1–5 mà bài này lấy ví dụ từ đó
 - [AI Email Triage — tự động phân loại và ưu tiên hộp thư của bạn](https://etuannv.com/vi/posts/ai-email-triage-n8n-claude/) — workflow phân loại Cấp 1–3
+- [Dùng Claude Code hiệu quả](https://etuannv.com/vi/posts/claude-code-efficiently/) — cùng nguyên tắc "chỉ dẫn là gợi ý, code là đảm bảo", áp dụng cho Claude Code

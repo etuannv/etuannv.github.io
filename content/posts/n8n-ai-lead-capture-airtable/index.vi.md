@@ -106,6 +106,8 @@ Mình để workflow này chạy trực tiếp, nên bạn có thể thử ngay 
 
 **Bước 3 — Xem video demo.** [Xem trên YouTube](https://youtu.be/hYoz-02DN4Q) để thấy toàn bộ luồng từ đầu đến cuối: gửi form → Claude phân tích → dòng Airtable → cảnh báo Telegram, với cả một lead nóng và một lead lạnh để thấy AI phân biệt thế nào.
 
+**Bước 4 — Lấy mã nguồn.** Toàn bộ workflow là mã nguồn mở trên GitHub — **[n8n-ai-lead-capture-airtable](https://github.com/etuannv/n8n-ai-lead-capture-airtable)**. Import file JSON, thêm credential của bạn, và nó là của bạn.
+
 ## Công nghệ & chi phí
 
 | Thành phần | Công cụ | Chi phí |
@@ -147,4 +149,6 @@ Nếu team bạn đang mất thời gian phân loại lead thủ công, copy d�
 
 ---
 **Xem thêm:**
-- [AI Email Triage — tự động phân loại và ưu tiên hộp thư của bạn](https://etuannv.com/posts/ai-email-triage-n8n-claude/) — cùng mô hình phân loại-và-định-tuyến áp dụng cho email
+- [AI Email Triage — tự động phân loại và ưu tiên hộp thư của bạn](https://etuannv.com/vi/posts/ai-email-triage-n8n-claude/) — cùng mô hình phân loại-và-định-tuyến áp dụng cho email
+- [Prompt Engineering qua 5 cấp độ](https://etuannv.com/vi/posts/prompt-engineering-5-levels/) — các kỹ thuật prompt Cấp 1–5 mà workflow này dựa vào
+- [Dùng Claude Code hiệu quả](https://etuannv.com/vi/posts/claude-code-efficiently/) — cách mình xây và ship những automation như thế này nhanh hơn

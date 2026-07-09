@@ -163,7 +163,7 @@ If your team is spending time on repetitive inbox work (or worse, missing import
 
 ## Want to Build It Yourself?
 
-The workflow JSON is available — drop a comment below or reach out via the [contact page](/contact/) and I'll send it over. You'll need:
+The full workflow is open source on GitHub — **[n8n-ai-email-triage](https://github.com/etuannv/n8n-ai-email-triage)**. Import the JSON and you'll need:
 
 - n8n (self-hosted or cloud)
 - Anthropic API key (~$5 credit to start)
@@ -178,3 +178,9 @@ Setup time: about 2 hours for someone comfortable with APIs.
 *Tuan Nguyen is a Top Rated Plus automation developer on Upwork with 10+ years in Python and data engineering. He builds AI automation systems, n8n workflows, and RAG chatbots for clients worldwide.*
 
 *→ [Upwork profile](https://www.upwork.com/freelancers/etuannv) · [Freelancer profile](https://www.freelancer.com/u/etuannv)*
+
+---
+**See also:**
+- [AI Lead Capture — from form submission to CRM in 30 seconds](https://etuannv.com/posts/n8n-ai-lead-capture-airtable/) — the same qualify-and-route pattern applied to contact-form leads
+- [Prompt Engineering in 5 Levels](https://etuannv.com/posts/prompt-engineering-5-levels/) — the prompt techniques behind this workflow's Claude classification
+- [Claude Code, Efficiently](https://etuannv.com/posts/claude-code-efficiently/) — how I build and ship automations like this one faster

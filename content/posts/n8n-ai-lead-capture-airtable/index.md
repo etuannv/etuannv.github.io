@@ -106,6 +106,8 @@ I've left this workflow running live, so you can test it right now.
 
 **Step 3 — Watch the demo video.** [Watch on YouTube](https://youtu.be/hYoz-02DN4Q) to see the full flow end to end: form submission → Claude analysis → Airtable row → Telegram alert, with both a hot lead and a cold lead so you can see how the AI differentiates.
 
+**Step 4 — Get the code.** The full workflow is open source on GitHub — **[n8n-ai-lead-capture-airtable](https://github.com/etuannv/n8n-ai-lead-capture-airtable)**. Import the JSON, add your own credentials, and it's yours.
+
 ## The stack & cost
 
 | Component | Tool | Cost |
@@ -148,3 +150,5 @@ If your team is spending time manually sorting leads, copying form data, or resp
 ---
 **See also:**
 - [AI Email Triage — automatically sort and prioritize your inbox](https://etuannv.com/posts/ai-email-triage-n8n-claude/) — the same qualify-and-route pattern applied to email
+- [Prompt Engineering in 5 Levels](https://etuannv.com/posts/prompt-engineering-5-levels/) — the Levels 1–5 prompt techniques this workflow relies on
+- [Claude Code, Efficiently](https://etuannv.com/posts/claude-code-efficiently/) — how I build and ship automations like this one faster

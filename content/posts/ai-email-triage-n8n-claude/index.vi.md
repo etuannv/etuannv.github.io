@@ -164,7 +164,7 @@ Nếu nhóm của bạn đang mất thời gian cho công việc inbox lặp l�
 
 ## Bạn muốn tự xây dựng nó?
 
-File JSON của workflow này có sẵn — để lại bình luận dưới đây hoặc liên hệ qua [trang liên hệ](/vi/contact/) và tôi sẽ gửi cho bạn. Bạn sẽ cần:
+Toàn bộ workflow là mã nguồn mở trên GitHub — **[n8n-ai-email-triage](https://github.com/etuannv/n8n-ai-email-triage)**. Import file JSON và bạn sẽ cần:
 
 - n8n (self-hosted hoặc cloud)
 - Anthropic API key (~$5 credit để bắt đầu)
@@ -179,3 +179,9 @@ Thời gian thiết lập: khoảng 2 giờ cho người đã quen làm việc v
 *Tuan Nguyen là lập trình viên tự động hóa Top Rated Plus trên Upwork với 10+ năm kinh nghiệm Python và kỹ thuật dữ liệu. Anh xây dựng hệ thống tự động hóa AI, workflow n8n, và RAG chatbot cho khách hàng trên toàn thế giới.*
 
 *→ [Hồ sơ Upwork](https://www.upwork.com/freelancers/etuannv) · [Hồ sơ Freelancer](https://www.freelancer.com/u/etuannv)*
+
+---
+**Xem thêm:**
+- [AI Thu Thập Lead — từ form đến CRM trong 30 giây](https://etuannv.com/vi/posts/n8n-ai-lead-capture-airtable/) — cùng mô hình phân loại-và-định-tuyến áp dụng cho lead từ form liên hệ
+- [Prompt Engineering qua 5 cấp độ](https://etuannv.com/vi/posts/prompt-engineering-5-levels/) — các kỹ thuật prompt đằng sau bước phân loại bằng Claude của workflow này
+- [Dùng Claude Code hiệu quả](https://etuannv.com/vi/posts/claude-code-efficiently/) — cách mình xây và ship những automation như thế này nhanh hơn
