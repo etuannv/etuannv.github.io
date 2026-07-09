@@ -102,3 +102,31 @@ User had already drafted a new bilingual post, `content/posts/n8n-ai-lead-captur
 **Known inconsistencies / next steps:**
 - The reciprocal cross-link above is still not added — do it if the user asks for tighter linking between the two n8n/Claude posts.
 - The "write an article about etuannv" task from the "About Tuan Nguyen" section (noted in the 2026-06-24 session above) is **still pending** — not addressed this session either.
+
+## Session Status (2026-07-09)
+
+Content + SEO session. Created two new bilingual posts from drafts in `docs/`, cross-linked the whole AI/Claude post cluster, added GitHub repo links, added updated-date SEO signals, and recategorized the two n8n workflow posts. All changes verified with clean `hugo --minify` builds; **nothing committed yet** — commit is left to the user.
+
+**Done:**
+- **Two new bilingual posts** (page bundles, EN `index.md` + VI `index.vi.md` + feature image), built from source docs in `docs/`:
+  - `content/posts/prompt-engineering-5-levels/` — from `docs/blog-prompt-engineering-5-levels.md`. Feature image `prompt-engineering-5-levels-feature-image.png` (user added after the flat files were first created, converting it to a bundle).
+  - `content/posts/claude-code-efficiently/` — from `docs/blog-claude-code-efficiently/`. Feature image copied in from the spaced source filename and renamed to `claude-code-efficiently-feature-image.png`.
+  - Both: stripped the doc's `# H1` + byline line (Hugo renders those), tags use `claude`/`ai`/`tools` conventions (not `claude-ai`), `date: 2026-07-09`. VI translation keeps code blocks / command names in English.
+- **Cross-linked the 4-post AI/Claude cluster** (email-triage, lead-capture, prompt-engineering-5-levels, claude-code-efficiently) via consistent `**See also:**` / `**Xem thêm:**` footers, EN→`/posts/…`, VI→`/vi/posts/…`. Added a "See also" block to `ai-email-triage-n8n-claude` (had none) and expanded the others. Fixed a pre-existing bug: lead-capture VI "See also" link was missing its `/vi/` prefix.
+- **GitHub repo links** on the two workflow posts: `ai-email-triage-n8n-claude` → https://github.com/etuannv/n8n-ai-email-triage (replaced the old "drop a comment and I'll send the JSON" line); `n8n-ai-lead-capture-airtable` → https://github.com/etuannv/n8n-ai-lead-capture-airtable (new "Step 4 — Get the code" in the Try-it section). The two guide posts have no repo.
+- **Updated-date SEO signals** for the recently-edited posts (three complementary mechanisms):
+  - `lastmod: 2026-07-09` front matter on `ai-email-triage-n8n-claude` (date 2026-06-24) and `n8n-ai-lead-capture-airtable` (date 2026-07-08) → their sitemap `<lastmod>` now advertises 2026-07-09 (was stale). Sitemap `.Lastmod` defaults to `.Date` here (no `enableGitInfo`), so front matter is what moves it.
+  - New `BlogPosting` JSON-LD on **all** posts (`layouts/_default/baseof.html`, `else if and .IsPage (eq .Section "posts")`) with `datePublished` + `dateModified`, `image`, per-language `inLanguage`, author/publisher. Posts previously had **no** Article schema (only `Person` on homepage). Validated: 26 blocks (13 EN + 13 VI) parse as valid JSON.
+  - Visible "Updated <date>" in `layouts/_default/single.html` (renders only when `.Lastmod.After .Date`), plus new i18n key `updated_on` (EN "Updated" / VI "Cập nhật").
+- **Recategorized** `ai-email-triage-n8n-claude` and `n8n-ai-lead-capture-airtable` (EN + VI) to `categories: ["projects"]` per explicit user request — this **reverses** the 2026-07-08 decision that set lead-capture to `["posts"]`.
+
+**Decisions made (with reasons):**
+- New posts use flat-then-bundle layout: no image → flat file; once a feature image exists it must be a page bundle (`index.md` in a dir) so the image is a page resource and the OG/`{*feature*,*thumb*,*cover*}` matcher in `baseof.html` picks it up (upgrades Twitter card to `summary_large_image`).
+- **JSON-LD must NOT use `| jsonify` inside `<script>`.** First attempt double-escaped (Hugo's script/JS-context escaping re-encodes jsonify's quotes → `"\"...\""`). Fixed by using the same inline-quoted idiom as the existing homepage `Person` block: literal `"..."` with `{{ .Value }}` inside, which Hugo JS-escapes exactly once and safely.
+- Category change is `["projects"]` (replace), not `["posts","projects"]` (append) — user chose "Projects only" when asked.
+
+**Known inconsistencies / next steps:**
+- **Category vs section mismatch (flagged to user, not resolved):** the two recategorized posts still physically live in `content/posts/`, so they keep `/posts/…` URLs, still list under `/posts/`, and do **NOT** appear in the homepage "Recent Projects" grid or `/projects/` (both driven by the `projects` *section* = `content/projects/*`, not the category). If the user actually wants them shown as portfolio projects, the real fix is relocating the bundles to `content/projects/` — offered, awaiting user decision.
+- `lastmod` is currently **manual** front matter. Offered to enable `enableGitInfo: true` so `.Lastmod` derives from git commit time automatically for all pages (needs a check that CI build has git history) — awaiting user go-ahead.
+- README.md's "Blog Post" front-matter schema still documents `categories: ["posts"]` as the norm; two posts now intentionally diverge. Not a bug, but note it if reconciling docs later.
+- All this session's work is uncommitted.

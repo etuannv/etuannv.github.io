@@ -3,7 +3,7 @@ title: "AI Phân loại Email: Từ Inbox đến Hành động trong Dưới 60 
 date: 2026-06-24
 lastmod: 2026-07-09
 tags: ["ai-automation", "n8n", "ai-agents", "rag-chatbots", "claude", "gmail", "workflow-automation"]
-categories: ["posts"]
+categories: ["projects"]
 description: "Một workflow n8n gồm 6 node, dùng Claude AI để phân loại, ưu tiên, tóm tắt và soạn sẵn câu trả lời cho mọi email — với chi phí dưới $8/tháng. Kèm video demo trực tiếp."
 url: "/vi/posts/ai-email-triage-n8n-claude/"
 ---
