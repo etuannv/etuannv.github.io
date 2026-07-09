@@ -1,6 +1,7 @@
 ---
 title: "AI Lead Capture: From Form Submission to CRM in 30 Seconds"
 date: 2026-07-08
+lastmod: 2026-07-09
 tags: ["n8n", "ai-automation", "automation", "airtable", "claude", "lead-management"]
 categories: ["posts"]
 description: "An n8n + Claude AI workflow that qualifies, scores, logs, and alerts on every contact-form lead automatically — in under 30 seconds."

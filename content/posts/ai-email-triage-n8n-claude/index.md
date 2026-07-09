@@ -1,8 +1,9 @@
 ---
 title: "AI Email Triage: Inbox to Action in Under 60 Seconds"
 date: 2026-06-24
+lastmod: 2026-07-09
 tags: ["ai-automation", "n8n", "ai-agents", "rag-chatbots", "claude", "gmail", "workflow-automation"]
-categories: ["posts"]
+categories: ["posts", "projects"]
 description: "A 6-node n8n workflow that uses Claude AI to classify, prioritize, summarize, and draft replies for every email — for under $8/month. Includes a live demo video."
 ---
 

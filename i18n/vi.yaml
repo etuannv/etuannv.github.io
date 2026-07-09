@@ -30,6 +30,8 @@
   translation: "Trang chủ"
 - id: min_read
   translation: "phút đọc"
+- id: updated_on
+  translation: "Cập nhật"
 - id: table_of_contents
   translation: "Mục lục"
 - id: hire_title

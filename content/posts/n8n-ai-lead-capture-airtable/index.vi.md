@@ -1,6 +1,7 @@
 ---
 title: "AI Thu Thập Lead: Từ Form Đến CRM Trong 30 Giây"
 date: 2026-07-08
+lastmod: 2026-07-09
 tags: ["n8n", "ai-automation", "automation", "airtable", "claude", "lead-management"]
 categories: ["posts"]
 description: "Workflow n8n + Claude AI tự động phân loại, chấm điểm, lưu và cảnh báo mọi lead từ form liên hệ — trong chưa đầy 30 giây."

@@ -30,6 +30,8 @@
   translation: "Home"
 - id: min_read
   translation: "min read"
+- id: updated_on
+  translation: "Updated"
 - id: table_of_contents
   translation: "Table of Contents"
 - id: hire_title
