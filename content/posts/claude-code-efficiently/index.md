@@ -1,9 +1,10 @@
 ---
 title: "Claude Code, Efficiently: Context, Tokens, and Knowing Which Interface to Use"
 date: 2026-07-09
+lastmod: 2026-09-11
 tags: ["claude", "claude-code", "ai", "tools", "vscode"]
 categories: ["posts"]
-description: "How to run Claude Code well, not just make it work — managing context as a budget, handing off between sessions with CLAUDE.md, using hooks as guarantees, and picking the right interface (CLI vs VS Code) for the job."
+description: "How to run Claude Code well, not just make it work — managing context as a budget, handing off between sessions without bloating CLAUDE.md, using hooks as guarantees, and picking the right interface (CLI vs VS Code) for the job."
 ---
 
 ![Claude Code, Efficiently](claude-code-efficiently-feature-image.png)
@@ -13,6 +14,8 @@ Most people learn Claude Code the same way. You install it, run it in a folder, 
 The gap between "Claude Code works" and "Claude Code works *well*" isn't about better prompts. It's about three things: how you manage context, how you hand off between sessions, and whether you picked the right interface for the job.
 
 This is what I've learned running it daily on Python and Django projects, written down so I can find it again.
+
+> **Updated September 2026.** Claude Code now has **auto memory** (on by default), which changes the session-handoff advice in Part 5. The original version of this post told you to pour each session's summary into `CLAUDE.md` — and doing that religiously is exactly how you end up with a 1,000-line file Claude re-reads every session. This revision fixes that, and updates the size guidance to match the current docs.
 
 ## Part 1 — What Claude Code Actually Is (And Where It Runs)
 
@@ -51,7 +54,8 @@ This file is the single highest-leverage thing you control.
 - Dump an entire style guide or API docs into it — too long, and Claude reads it poorly
 - `@-include` large files unless genuinely necessary — every include costs tokens on every turn
 - Write vague rules like "write good code" — rules must be specific and checkable
-- Let it grow past ~500 lines without splitting — that's what a `rules/` folder is for
+- Let it grow past **~200 lines** — longer files consume more context and Claude follows them *less* reliably (this is the current official guidance, down from the looser numbers people used to quote). Split detailed or area-specific instructions into `.claude/rules/`, using `paths:` frontmatter so a rule only loads when Claude touches matching files. Run `/doctor` when it's grown too big — it proposes exactly what to trim.
+- Turn it into a session-by-session changelog — that record belongs elsewhere now (see Part 5)
 
 ### The full `.claude/` layout
 
@@ -63,8 +67,7 @@ Once a project grows, the configuration spreads out:
 ├── CLAUDE.local.md        ← private notes, never pushed
 ├── settings.json          ← permissions + hooks, committed
 ├── settings.local.json    ← private settings
-├── memory.md              ← Claude's own working memory
-├── rules/                 ← detailed rules, split out of CLAUDE.md
+├── rules/                 ← detailed / path-scoped rules, split out of CLAUDE.md
 │   ├── workflow.md
 │   ├── design.md
 │   └── tech-defaults.md
@@ -76,6 +79,12 @@ Once a project grows, the configuration spreads out:
 ```
 
 The `.local` variants exist so you can commit team config while keeping personal preferences out of the repo.
+
+### The other half of the file you don't write: auto memory
+
+`CLAUDE.md` is the half *you* write. There's now a second half *Claude* writes — **auto memory**, on by default. As you work, Claude quietly saves notes about your preferences, the corrections you give it, and project context it can't read off the code: ongoing work, decisions, where things stand. These live outside your repo at `~/.claude/projects/<project>/memory/`, indexed by a `MEMORY.md` that auto-loads each session — and Claude deliberately skips anything your `CLAUDE.md` already says.
+
+The practical upshot, which rewrites Part 5 below: you no longer hand-maintain a running project journal inside `CLAUDE.md`. Run `/memory` any time to see, edit, or delete what Claude saved.
 
 ## Part 3 — The Features That Actually Change How You Work
 
@@ -136,7 +145,7 @@ A `researcher` agent lives at `.claude/agents/researcher.md`:
 ---
 name: researcher
 description: Research and summarize information on request
-model: claude-sonnet-4-6
+model: sonnet
 ---
 
 You are a research agent. Your job is to:
@@ -260,34 +269,39 @@ Context resets. Projects don't. This loop is what keeps them connected.
 
 ### Step 1 — End the session properly
 
-Before you close, ask Claude to update `CLAUDE.md`:
+Two things carry across sessions, and they are **not** the same file:
+
+- **Durable rules** — "always run migrations before X", "this table is written by the scraper, don't touch it through the ORM". These go in `CLAUDE.md`, and only when the lesson is worth making permanent (Claude tripped on it twice).
+- **The session record** — what got done, what's next, which decisions you made and why. This is auto memory's job now; let it capture that. If you also want an explicit, version-controlled trail, write it to a **separate file that isn't loaded every session** — not into `CLAUDE.md`:
 
 ```
-Before finishing, update CLAUDE.md with what was completed
-in this session: the updated status of each part, the next
-steps for the following session, and the important decisions
-made along with their reasons.
+Before finishing, append a dated entry to docs/SESSION_LOG.md
+summarising what changed this session and the key decisions +
+reasons, and move any open follow-ups into docs/BACKLOG.md.
+Only add to CLAUDE.md if we established a durable rule that
+should apply to every future session — and keep it to one line.
 ```
+
+> **The one habit to unlearn.** Don't ask Claude to append the session summary *into `CLAUDE.md`* every time. That single instruction is what quietly turns a sharp 150-line brain into a 1,000-line changelog Claude has to re-read on every session — burning tokens and drowning the rules that actually matter. (Ask me how I know — an earlier version of this very post recommended it.) Keep `CLAUDE.md` for rules; keep the story in auto memory or `docs/`.
 
 ### Step 2 — Start the next session properly
 
-Don't dive straight into a task. Make Claude read first:
+Auto memory reloads on its own, so "where things stand" is often already in context. For anything version-controlled, point Claude at it explicitly:
 
 ```
-Read CLAUDE.md and tell me where the project currently stands.
-What are the next steps, and is there anything I should be
-aware of?
+Read CLAUDE.md and docs/BACKLOG.md, check what you remember
+about this project, and tell me where things stand — the next
+steps and anything I should be aware of.
 ```
 
 ### Step 3 — For a big session, plan before you build
 
 ```
-Based on CLAUDE.md and the project's current status, plan out
-today's session: what to prioritize and in what order to
-tackle things.
+Based on CLAUDE.md, docs/BACKLOG.md, and the current state,
+plan today's session: what to prioritize and in what order.
 ```
 
-Repeat every session, and `CLAUDE.md` becomes the project's long-term memory. The context window is short. The file is not.
+Repeat this and the split stays healthy: `CLAUDE.md` stays small and sharp, the running story lives where it doesn't cost you on every turn. The context window is short — but the fix isn't one big file, it's the *right* file loaded at the *right* time.
 
 **Automate the boring half.** A `SessionStart` hook that prints `git status` and greps for TODOs gives Claude the current state before you type a word. What `SessionStart` and `UserPromptSubmit` write to stdout is added to context as something Claude can see and act on — that's what makes those two events special.
 
@@ -348,18 +362,19 @@ That's the actual answer. The question isn't which tool. It's which one fits the
 
 If you remember six things:
 
-1. **`/init` first, always.** A good `CLAUDE.md` is the highest-leverage file in your repo.
+1. **`/init` first, always.** A good — and *small* — `CLAUDE.md` is the highest-leverage file in your repo.
 2. **Plan Mode for anything bigger than a one-line fix.** Review, push back, then approve.
 3. **Subagents for research.** Reading is expensive; summaries are cheap.
 4. **Compact at 70–80%, and say what to preserve.** Don't let the summarizer guess.
 5. **Instructions are a suggestion; hooks are a guarantee.** And `exit 2` blocks — not `exit 1`.
 6. **Extension and CLI share history.** Stop choosing. Use both.
 
-The habit underneath all six: treat context as a budget you're spending, and `CLAUDE.md` as the ledger that survives when the budget runs out.
+The habit underneath all six: treat context as a budget you're spending — and keep `CLAUDE.md` a small, sharp rulebook, not the ledger. The running ledger is auto memory's job now.
 
 ## References
 
 - [Claude Code documentation](https://code.claude.com/docs/en/overview)
+- [How Claude remembers your project (CLAUDE.md + auto memory)](https://code.claude.com/docs/en/memory)
 - [Using Claude Code in VS Code](https://code.claude.com/docs/en/vs-code)
 - [Hooks reference](https://code.claude.com/docs/en/hooks)
 

@@ -1,9 +1,10 @@
 ---
 title: "Dùng Claude Code Hiệu Quả: Context, Token, và Chọn Đúng Giao Diện"
 date: 2026-07-09
+lastmod: 2026-09-11
 tags: ["claude", "claude-code", "ai", "tools", "vscode"]
 categories: ["posts"]
-description: "Cách dùng Claude Code cho tốt, không chỉ là cho chạy được — quản context như một ngân sách, bàn giao giữa các phiên bằng CLAUDE.md, dùng hook như một sự đảm bảo, và chọn đúng giao diện (CLI vs VS Code) cho từng việc."
+description: "Cách dùng Claude Code cho tốt, không chỉ là cho chạy được — quản context như một ngân sách, bàn giao giữa các phiên mà không làm phình CLAUDE.md, dùng hook như một sự đảm bảo, và chọn đúng giao diện (CLI vs VS Code) cho từng việc."
 ---
 
 ![Dùng Claude Code hiệu quả](claude-code-efficiently-feature-image.png)
@@ -13,6 +14,8 @@ Phần lớn mọi người học Claude Code theo cùng một kiểu. Bạn cà
 Khoảng cách giữa "Claude Code chạy được" và "Claude Code chạy *tốt*" không nằm ở prompt hay hơn. Nó nằm ở ba thứ: cách bạn quản context, cách bạn bàn giao giữa các phiên, và bạn có chọn đúng giao diện cho công việc hay không.
 
 Đây là những gì mình đúc rút được khi dùng nó hằng ngày trên các dự án Python và Django, viết ra để lần sau còn tìm lại được.
+
+> **Cập nhật tháng 9/2026.** Claude Code giờ đã có **auto memory** (bật mặc định), điều này thay đổi lời khuyên về bàn giao phiên ở Phần 5. Bản gốc của bài này bảo bạn dồn tóm tắt mỗi phiên vào `CLAUDE.md` — và làm điều đó đều đặn chính là cách bạn kết thúc với một file 1.000 dòng mà Claude phải đọc lại ở mỗi phiên. Bản này sửa lại điều đó, và cập nhật hướng dẫn về kích thước cho khớp tài liệu hiện tại.
 
 ## Phần 1 — Claude Code thực chất là gì (và chạy ở đâu)
 
@@ -51,7 +54,8 @@ File này là thứ có đòn bẩy cao nhất mà bạn kiểm soát được.
 - Đổ nguyên một style guide hay API docs vào — quá dài, và Claude đọc nó kém
 - `@-include` các file lớn trừ khi thật sự cần — mỗi include tốn token ở mọi lượt
 - Viết luật mơ hồ kiểu "viết code cho tốt" — luật phải cụ thể và kiểm tra được
-- Để nó vượt quá ~500 dòng mà không tách — đó là lúc cần một thư mục `rules/`
+- Để nó vượt quá **~200 dòng** — file càng dài càng tốn context và Claude tuân theo *kém* tin cậy hơn (đây là hướng dẫn chính thức hiện tại, thấp hơn các con số lỏng lẻo mọi người hay trích trước đây). Tách các chỉ dẫn chi tiết hoặc theo từng khu vực vào `.claude/rules/`, dùng frontmatter `paths:` để một luật chỉ được nạp khi Claude động vào file khớp mẫu. Chạy `/doctor` khi nó phình quá to — nó sẽ đề xuất chính xác cái gì nên cắt.
+- Biến nó thành một cuốn changelog ghi theo từng phiên — bản ghi đó giờ thuộc về chỗ khác (xem Phần 5)
 
 ### Bố cục đầy đủ của `.claude/`
 
@@ -63,8 +67,7 @@ Khi dự án lớn lên, phần cấu hình sẽ trải ra:
 ├── CLAUDE.local.md        ← ghi chú riêng tư, không bao giờ push
 ├── settings.json          ← permission + hook, commit
 ├── settings.local.json    ← settings riêng tư
-├── memory.md              ← bộ nhớ làm việc của chính Claude
-├── rules/                 ← luật chi tiết, tách ra khỏi CLAUDE.md
+├── rules/                 ← luật chi tiết / theo path, tách ra khỏi CLAUDE.md
 │   ├── workflow.md
 │   ├── design.md
 │   └── tech-defaults.md
@@ -76,6 +79,12 @@ Khi dự án lớn lên, phần cấu hình sẽ trải ra:
 ```
 
 Các biến thể `.local` tồn tại để bạn commit config của cả nhóm mà vẫn giữ tùy chọn cá nhân ngoài repo.
+
+### Nửa còn lại của file mà bạn không viết: auto memory
+
+`CLAUDE.md` là nửa do *bạn* viết. Giờ có nửa thứ hai do *Claude* tự viết — **auto memory**, bật mặc định. Trong lúc bạn làm, Claude lặng lẽ ghi lại tùy chọn của bạn, các lần bạn sửa nó, và bối cảnh dự án mà nó không đọc được từ code: việc đang làm dở, các quyết định, hiện trạng. Những ghi chú này nằm ngoài repo, ở `~/.claude/projects/<project>/memory/`, được đánh chỉ mục bởi một file `MEMORY.md` tự nạp mỗi phiên — và Claude cố tình bỏ qua mọi thứ mà `CLAUDE.md` của bạn đã nói.
+
+Hệ quả thực tế, và nó viết lại Phần 5 bên dưới: bạn không còn tự tay duy trì một cuốn nhật ký dự án bên trong `CLAUDE.md` nữa. Chạy `/memory` bất cứ lúc nào để xem, sửa, hay xóa những gì Claude đã lưu.
 
 ## Phần 3 — Những tính năng thực sự thay đổi cách bạn làm việc
 
@@ -136,7 +145,7 @@ Một agent `researcher` nằm ở `.claude/agents/researcher.md`:
 ---
 name: researcher
 description: Research and summarize information on request
-model: claude-sonnet-4-6
+model: sonnet
 ---
 
 You are a research agent. Your job is to:
@@ -260,34 +269,39 @@ Context reset. Dự án thì không. Vòng lặp này là thứ giữ chúng k�
 
 ### Bước 1 — Kết thúc phiên cho đúng cách
 
-Trước khi đóng, nhờ Claude cập nhật `CLAUDE.md`:
+Có hai thứ được mang qua giữa các phiên, và chúng **không** phải cùng một file:
+
+- **Luật bền vững** — "luôn chạy migration trước khi làm X", "bảng này do scraper ghi, đừng động vào qua ORM". Những cái này vào `CLAUDE.md`, và chỉ khi bài học đáng được ghi vĩnh viễn (Claude vấp phải nó tới lần thứ hai).
+- **Bản ghi phiên** — làm được gì, tiếp theo là gì, quyết định gì và vì sao. Đây giờ là việc của auto memory; cứ để nó ghi. Nếu bạn còn muốn một dấu vết tường minh, có version, hãy ghi vào một **file riêng không được nạp mỗi phiên** — không phải vào `CLAUDE.md`:
 
 ```
-Before finishing, update CLAUDE.md with what was completed
-in this session: the updated status of each part, the next
-steps for the following session, and the important decisions
-made along with their reasons.
+Before finishing, append a dated entry to docs/SESSION_LOG.md
+summarising what changed this session and the key decisions +
+reasons, and move any open follow-ups into docs/BACKLOG.md.
+Only add to CLAUDE.md if we established a durable rule that
+should apply to every future session — and keep it to one line.
 ```
+
+> **Thói quen cần bỏ.** Đừng nhờ Claude dồn tóm tắt phiên *vào `CLAUDE.md`* mỗi lần. Đúng một câu lệnh đó là thứ lặng lẽ biến một bộ não sắc bén 150 dòng thành một cuốn changelog 1.000 dòng mà Claude phải đọc lại ở mỗi phiên — đốt token và nhấn chìm những luật thực sự quan trọng. (Hỏi mình vì sao mình biết — một bản trước của chính bài này từng khuyên làm vậy.) Giữ `CLAUDE.md` cho luật; giữ câu chuyện trong auto memory hoặc `docs/`.
 
 ### Bước 2 — Bắt đầu phiên tiếp theo cho đúng cách
 
-Đừng lao thẳng vào một tác vụ. Bắt Claude đọc trước đã:
+Auto memory tự nạp lại, nên "dự án đang ở đâu" thường đã có sẵn trong context. Với những gì được quản lý version, hãy chỉ Claude tới đó một cách tường minh:
 
 ```
-Read CLAUDE.md and tell me where the project currently stands.
-What are the next steps, and is there anything I should be
-aware of?
+Read CLAUDE.md and docs/BACKLOG.md, check what you remember
+about this project, and tell me where things stand — the next
+steps and anything I should be aware of.
 ```
 
 ### Bước 3 — Với một phiên lớn, lập kế hoạch trước khi xây
 
 ```
-Based on CLAUDE.md and the project's current status, plan out
-today's session: what to prioritize and in what order to
-tackle things.
+Based on CLAUDE.md, docs/BACKLOG.md, and the current state,
+plan today's session: what to prioritize and in what order.
 ```
 
-Lặp lại mỗi phiên, và `CLAUDE.md` trở thành trí nhớ dài hạn của dự án. Cửa sổ context thì ngắn. File thì không.
+Lặp lại điều này và sự phân tách sẽ khỏe mạnh: `CLAUDE.md` giữ nhỏ và sắc, còn câu chuyện đang diễn ra nằm ở nơi không bắt bạn trả giá ở mỗi lượt. Cửa sổ context thì ngắn — nhưng lời giải không phải một file to, mà là đúng file được nạp đúng lúc.
 
 **Tự động hóa nửa nhàm chán.** Một hook `SessionStart` in `git status` và grep các TODO sẽ cho Claude biết trạng thái hiện tại trước khi bạn gõ một chữ. Những gì `SessionStart` và `UserPromptSubmit` ghi ra stdout được thêm vào context như thứ Claude có thể thấy và hành động theo — đó chính là điều khiến hai sự kiện này đặc biệt.
 
@@ -348,18 +362,19 @@ Chúng dùng chung lịch sử hội thoại. Làm việc trong extension, gõ `
 
 Nếu bạn chỉ nhớ sáu điều:
 
-1. **`/init` trước tiên, luôn luôn.** Một `CLAUDE.md` tốt là file có đòn bẩy cao nhất trong repo của bạn.
+1. **`/init` trước tiên, luôn luôn.** Một `CLAUDE.md` tốt — và *gọn* — là file có đòn bẩy cao nhất trong repo của bạn.
 2. **Plan Mode cho bất cứ thứ gì lớn hơn một dòng sửa.** Rà soát, phản biện, rồi duyệt.
 3. **Subagent cho việc nghiên cứu.** Đọc thì đắt; tóm tắt thì rẻ.
 4. **Compact ở 70–80%, và nói rõ cần giữ gì.** Đừng để bộ tóm tắt đoán mò.
 5. **Chỉ dẫn là gợi ý; hook là đảm bảo.** Và `exit 2` mới chặn — không phải `exit 1`.
 6. **Extension và CLI dùng chung lịch sử.** Thôi phân vân đi. Dùng cả hai.
 
-Thói quen nằm dưới cả sáu điều: coi context như một ngân sách bạn đang tiêu, và `CLAUDE.md` như cuốn sổ cái còn lại khi ngân sách cạn.
+Thói quen nằm dưới cả sáu điều: coi context như một ngân sách bạn đang tiêu — và giữ `CLAUDE.md` là một cuốn luật nhỏ, sắc, chứ không phải cuốn sổ cái. Cuốn sổ cái đang chạy giờ là việc của auto memory.
 
 ## Tham khảo
 
 - [Tài liệu Claude Code](https://code.claude.com/docs/en/overview)
+- [Claude nhớ dự án của bạn thế nào (CLAUDE.md + auto memory)](https://code.claude.com/docs/en/memory)
 - [Dùng Claude Code trong VS Code](https://code.claude.com/docs/en/vs-code)
 - [Tài liệu về Hooks](https://code.claude.com/docs/en/hooks)
 
